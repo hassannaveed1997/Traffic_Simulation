@@ -3,7 +3,8 @@ A traffic simulation in C++. This was done as a final for my Software Systems De
 
 #Running
 1) Open the terminal
-2)  "*make*"
-3) "*./run*"
+2) *make*
+3) *./run*
 
 it runs for a 100 time steps.
+For further details open "**Final Project Proposal.pdf**"
