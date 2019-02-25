@@ -1,0 +1,16 @@
+run: Main.o Section.o Lane.o Intersection.o Vehicle.o TrafficSignal.o
+	g++ Main.o Section.o Lane.o Intersection.o Vehicle.o TrafficSignal.o -o run
+Main.o: Main.cpp Section.h Section.cpp Lane.h Lane.cpp TrafficSignal.h TrafficSignal.cpp Intersection.h Intersection.cpp Vehicle.h Vehicle.cpp Random.h
+	g++ -std=gnu++11 Main.cpp Section.cpp Lane.cpp TrafficSignal.cpp Intersection.cpp Vehicle.cpp 
+Section.o: Section.cpp Section.h
+	g++ Section.cpp
+Lane.o: Lane.cpp Lane.h Section.h Intersection.h TrafficSignal.h
+	g++ Lane.cpp
+Intersection.o: Intersection.cpp Intersection.h Section.h
+	g++ Intersection.cpp
+Vehicle.o: Vehicle.cpp Vehicle.h Lane.h TrafficSignal.h
+	g++ Vehicle.cpp
+TrafficSignal.o: TrafficSignal.cpp TrafficSignal.h
+	g++ TrafficSignal.cpp
+clean:
+	/bin/rm -f Main.o Section.o Lane.o Intersection.o Vehicle.o TrafficSignal.o run
